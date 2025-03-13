@@ -1,92 +1,147 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Segoe UI", system-ui, sans-serif;
   box-sizing: border-box;
 }
+
 body {
-  background-color: aqua;
+  background: #ffe6f2; /* Нежно-розовый фон */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .card {
   width: 90%;
   max-width: 470px;
-  background: linear-gradient(135deg, #71b7e6, #9b59b6);
-  color: #fff;
-  margin: 100px auto 0;
-  border-radius: 40px 35px;
-  text-align: center;
+  background: #f1c4d4; /* Бежевый фон карточки */
+  padding: 30px 25px;
+  border-radius: 20px;
+  border: 2px solid #ff9eb5; /* Розовая рамка */
+  box-shadow: 0 0 25px rgba(255, 158, 181, 0.3); /* Неоновая тень */
+  position: relative;
 }
 
 .search {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 10px;
 }
+
 .search input {
-  padding: 10px 25px;
-  border: 0;
-  border-radius: 30px;
-  color: #555;
-  background: #ebfffc;
-  outline: 0;
-  height: 60px;
   flex: 1;
-  margin-right: 16px;
-  font-size: 18px;
+  height: 55px;
+  padding: 0 25px;
+  border: 2px solid #ffb6c1;
+  border-radius: 30px;
+  background: #fff;
+  color: #d84a7e;
+  font-size: 16px;
+  transition: all 0.3s ease;
 }
+
+.search input:focus {
+  outline: none;
+  box-shadow: 0 0 15px rgba(255, 158, 181, 0.3);
+  border-color: #ff7a95;
+}
+
 .search button {
-  border: 0;
-  outline: 0;
-  background-color: #ebfffc;
+  width: 55px;
+  height: 55px;
+  border: none;
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
+  background: #ffecf0;
   cursor: pointer;
-}
-.search button img {
-  width: 16px;
-}
-.weather-icon {
-  width: 170px;
-  margin-top: 30px;
-}
-.weather h1 {
-  font-size: 85px;
-  font-weight: 500px;
-}
-.weather h2 {
-  font-size: 40px;
-  font-weight: 400px;
-  margin-top: -10px;
-}
-.details {
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
-  margin-top: 50px;
+  transition: all 0.3s ease;
 }
-.col {
-  display: flex;
-  align-items: center;
-  text-align: left;
+
+.search button:hover {
+  background: #ffdde5;
+  box-shadow: 0 0 12px rgba(255, 122, 149, 0.3);
 }
-.col img {
-  width: 43px;
-  margin-right: 10px;
+
+.search-btn {
+  font-size: 24px;
+  color: #ff7a95;
 }
-.humidity,
-.wind {
-  margin-top: -6px;
-  font-size: 28px;
-}
+
+/* Стили для блока погоды */
 .weather {
   display: none;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 25px;
 }
+
+.weather-icon {
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 15px;
+  display: block;
+  filter: drop-shadow(0 0 8px rgba(255, 122, 149, 0.2));
+}
+
+.temp {
+  font-size: 72px;
+  font-weight: 300;
+  color: #d84a7e;
+  margin: 10px 0;
+  text-shadow: 0 0 8px rgba(216, 74, 126, 0.1);
+}
+
+.city {
+  font-size: 38px;
+  font-weight: 300;
+  color: #ff7a95;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+.details {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.col {
+  flex: 0 1 180px;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-radius: 15px;
+  background: #fff5f7;
+  border: 2px solid #ffc0cb;
+  backdrop-filter: blur(3px);
+}
+
+.icon {
+  font-size: 36px;
+  margin-right: 12px;
+  color: #ff7a95;
+}
+
+.humidity,
+.wind {
+  font-size: 24px;
+  color: #d84a7e;
+  font-weight: 500;
+}
+
 .error {
-  text-align: left;
-  margin-left: 10px;
-  font-size: 10px;
-  margin-top: 10px;
+  color: #ff4444;
+  font-size: 14px;
+  margin: 10px 0 0 15px;
+  display: none;
+  text-shadow: 0 0 8px rgba(255, 68, 68, 0.1);
 }
